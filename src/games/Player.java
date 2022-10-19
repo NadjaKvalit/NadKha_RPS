@@ -5,6 +5,8 @@ public class Player {
     private final String name;
 
     //constructor
+
+
     public Player(String name, int score) {
         this.name = name;//this - means that we call field from THIS class
         this.score = score;
@@ -29,6 +31,10 @@ public class Player {
     public void rageQuit() {
         System.exit(0);
     }*/
+
+    public void setScore(int score) {
+        this.score = score;
+    }
 
     @Override
     public String toString() {
