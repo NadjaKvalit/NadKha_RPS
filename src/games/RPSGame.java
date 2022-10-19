@@ -3,6 +3,8 @@ package games;
 import java.util.Scanner;
 
 public class RPSGame {
+
+    //@TODO: If the fields are not declared as private they can be manipulated from outside
     Player player;
     Fist aIFist;
     private String yourChoiceStr = "";
@@ -11,8 +13,10 @@ public class RPSGame {
     private String resultOfGame = "";
     private int tries;
 
+    //@TODO: declare the methods access modifier: public, private or protected
+    //An instance of the object cannot be created from outside its package if the constructor is not declared as public
     RPSGame(String playersName, int playersScore) {
-        player = new Player(playersName, playersScore);
+        player = new Player(playersScore, playersName);
         aIFist = new Fist();
     }
 
@@ -21,6 +25,8 @@ public class RPSGame {
         System.out.println("Rock (0), Paper (1), Scissors (2). Your choice: ");
         Scanner ssscanner = new Scanner(System.in);
         int AIChoice = aIFist.play();
+
+        //@FIXME: check IntelliJ's suggestion for the switch statement and make adjustments
         switch (AIChoice) {
             case Fist.ROCK:
                 resultAIstr = "ROCK";
