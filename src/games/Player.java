@@ -5,27 +5,15 @@ public class Player {
     private final String name;
 
     //constructor
-
-
-    public Player(int score, String name) {
+    public Player(String name, int score) {
+        this.name = name;//this - means that we call field from THIS class
         this.score = score;
-        this.name = name;
     }
 
     public int getScore() {
         return score;
     }
 
-    public void setScore(int score) {
-        this.score = score;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    //@TODO: these methods work fine, but by convention there should also be a setter method:
-    //@TODO: public void setScore(int score){ this.score = score; }
     public void plusScore() {
         score++;
     }
@@ -41,6 +29,10 @@ public class Player {
     public void rageQuit() {
         System.exit(0);
     }*/
+
+    public void setScore(int score) {
+        this.score = score;
+    }
 
     @Override
     public String toString() {

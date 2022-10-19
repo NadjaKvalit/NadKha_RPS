@@ -16,7 +16,7 @@ public class RPSGame {
     //@TODO: declare the methods access modifier: public, private or protected
     //An instance of the object cannot be created from outside its package if the constructor is not declared as public
     RPSGame(String playersName, int playersScore) {
-        player = new Player(playersScore, playersName);
+        player = new Player(playersName, playersScore);
         aIFist = new Fist();
     }
 
