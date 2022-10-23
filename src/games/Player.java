@@ -14,24 +14,23 @@ public class Player {
         return score;
     }
 
-    public void plusScore() {
-        score++;
-    }
+    /*   public void plusScore() {
+           score++;
+       }
 
-    public void minusScore() {
-        score--;
-    }
+       public void minusScore() {
+           score--;
+       }
 
-/*    public String getName() {
-        return name;
-    }
+       public String getName() {
+           return name;
+       }
 
-    public void rageQuit() {
-        System.exit(0);
-    }*/
-
+       public void rageQuit() {
+           System.exit(0);
+       }*/
     public void setScore(int score) {
-        this.score = score;
+        this.score = score + this.score;
     }
 
     @Override

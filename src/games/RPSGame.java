@@ -4,24 +4,24 @@ import java.util.Scanner;
 
 public class RPSGame {
 
-    //@TODO: If the fields are not declared as private they can be manipulated from outside
-    Player player;
-    Fist aIFist;
+    //@TODO: If the fields are not declared as private they can be manipulated from outside DONE
+    private final Player player;
+    private final Fist aIFist;
     private String yourChoiceStr = "";
     private String resultAIstr = "";
     //    private int score;
     private String resultOfGame = "";
     private int tries;
 
-    //@TODO: declare the methods access modifier: public, private or protected
+    //@TODO: declare the methods access modifier: public, private or protected DONE
     //An instance of the object cannot be created from outside its package if the constructor is not declared as public
-    RPSGame(String playersName, int playersScore) {
+    public RPSGame(String playersName, int playersScore) {
         player = new Player(playersName, playersScore);
         aIFist = new Fist();
     }
 
     public void playGame() {
-        System.out.println(player.toString());
+        System.out.println(player);
         System.out.println("Rock (0), Paper (1), Scissors (2). Your choice: ");
         Scanner ssscanner = new Scanner(System.in);
         int AIChoice = aIFist.play();
@@ -33,6 +33,7 @@ public class RPSGame {
                 break;
             case Fist.PAPER:
                 resultAIstr = "PAPER";
+
                 break;
             case Fist.SCISSORS:
                 resultAIstr = "SCISSORS";
@@ -45,12 +46,14 @@ public class RPSGame {
                 yourChoiceStr = "ROCK";
                 if (AIChoice == Fist.SCISSORS) {
                     resultOfGame = "Congrats. You win. Rock beats Scissors";
-                    player.plusScore();
+//                  player.plusScore();
+                    player.setScore(1);
                 } else if (AIChoice == Fist.ROCK) {
                     resultOfGame = "Upps, you both chose the same";
                 } else {
                     resultOfGame = "You lose. Paper beats Rock";
-                    player.minusScore();
+//                  player.minusScore();
+                    player.setScore(-1);
                 }
                 resultInfo();
                 break;
@@ -60,12 +63,14 @@ public class RPSGame {
                 yourChoiceStr = "PAPER";
                 if (AIChoice == Fist.ROCK) {
                     resultOfGame = "Congrats. You win. Paper beats Rock";
-                    player.plusScore();
+//                  player.plusScore();
+                    player.setScore(1);
                 } else if (AIChoice == Fist.PAPER) {
                     resultOfGame = "Upps, you both chose the same";
                 } else {
                     resultOfGame = "You lose. Scissors beats Paper";
-                    player.minusScore();
+//                  player.minusScore();
+                    player.setScore(-1);
                 }
                 resultInfo();
                 break;
@@ -75,12 +80,14 @@ public class RPSGame {
                 yourChoiceStr = "SCISSORS";
                 if (AIChoice == Fist.PAPER) {
                     resultOfGame = "Congrats. You win. Scissors beats Paper";
-                    player.plusScore();
+//                  player.plusScore();
+                    player.setScore(1);
                 } else if (AIChoice == Fist.SCISSORS) {
                     resultOfGame = "Upps, you both chose the same";
                 } else {
                     resultOfGame = "You lose. Rock beats Scissors";
-                    player.minusScore();
+//                  player.minusScore();
+                    player.setScore(-1);
                 }
                 resultInfo();
                 break;
